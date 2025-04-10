@@ -1,0 +1,27 @@
+# 가상환경 제외
+venv/
+__pycache__/
+*.pyc
+
+# Git
+.git
+.gitignore
+
+# Docker 자체
+Dockerfile
+docker-compose.yml
+
+# 시스템
+*.log
+*.sqlite3
+*.swp
+*.swo
+
+# 편집기 설정
+.vscode/
+.idea/
+
+# 미디어나 정적파일 (이미 collectstatic 되었을 경우만)
+staticfiles/
+media/
+
