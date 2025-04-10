@@ -1,5 +1,6 @@
 # apps/teams/models.py
 
+import uuid
 from django.db import models
 from django.conf import settings
 
@@ -29,3 +30,15 @@ class Membership(models.Model):
 
     def __str__(self):
         return f"{self.user} in {self.team} ({self.role})"
+
+
+class TeamInvitation(models.Model):
+    team = models.ForeignKey(Team, on_delete=models.CASCADE)
+    email = models.EmailField()
+    invited_by = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    token = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    accepted = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"{self.email} 초대 to {self.team.name}"
