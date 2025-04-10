@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# Virtual Environment
+venv/
+.env
+
+# Django Migrations
+**/migrations/
+!*/migrations/__init__.py
+
+# SQLite (if used)
+*.sqlite3
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Logs
+*.log
+
+# Docker
+*.pid
+*.seed
+*.bak
+*.swp
+docker-compose.override.yml
+
+# PostgreSQL data (if volume is bind mounted manually)
+postgres_data/
+
+# Static / media
+staticfiles/
+media/
+
+# pytest
+.pytest_cache/
+.coverage
+htmlcov/
+
+# mypy / lint / coverage
+.mypy_cache/
+coverage.xml
+*.cover
+
+# node / frontend (if applicable)
+node_modules/
+dist/
+build/
